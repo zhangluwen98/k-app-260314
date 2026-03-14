@@ -1,0 +1,14 @@
+# 根路径重定向到 index.html
+/ /index.html 200
+
+# 小说详情页重定向
+/novel/:id /novel.html 200
+
+# 阅读页重定向
+/read/:id /read.html 200
+
+# 登录/注册页重定向
+/auth /auth.html 200
+
+# 个人中心页重定向
+/profile /profile.html 200
