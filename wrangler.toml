@@ -1,0 +1,12 @@
+name = "kira-api"
+main = "src/workers/index.js"
+compatibility_date = "2024-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "kira"
+database_id = "aa0c4208-48bf-4cd8-853e-fe8e21a1b19f"
+
+[[r2_buckets]]
+binding = "IMAGE_BUCKET"
+bucket_name = "kira-image"
