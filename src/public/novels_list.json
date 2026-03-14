@@ -1,0 +1,76 @@
+[
+  {
+    "id": "kira-world",
+    "title": "kira的世界",
+    "author": "kira",
+    "cover": "/assets/images/covers/kira-genesis.jpg",
+    "description": "欢迎来到kira的世界，一个专为女性GB爱好者构建的虚拟社区。在这里，你可以穿越不同的世界线，攻略各种魅力男主，创造属于你的浪漫故事。",
+    "tags": [
+      "女性向",
+      "GB",
+      "穿越",
+      "攻略",
+      "虚拟社区"
+    ],
+    "status": "Completed"
+  },
+  {
+    "id": "broken-android",
+    "title": "被当做零钱抵给你的抹布仿生人",
+    "author": "九品芝麻糊",
+    "cover": "/assets/images/covers/broken-android.jpg",
+    "description": "在这个钢铁都市里，你意外收留了一个被当做垃圾的漂亮仿生人。他身上的伤痕和眼底的微光，会如何改变你冰冷的生活？",
+    "tags": [
+      "赛博朋克",
+      "治愈",
+      "仿生人",
+      "纯爱"
+    ],
+    "status": "Completed"
+  },
+  {
+    "id": "emperor-consort",
+    "title": "新帝 x 大肚子的前皇夫",
+    "author": "抹茶红豆派派派",
+    "cover": "/assets/images/covers/emperor-consort.jpg",
+    "description": "先帝驾崩，新帝即位，而在先帝去时便已有孕的皇夫顾宴清，成了新朝一个尴尬的存在。新帝赵闻珂对他关怀备至，这份温柔背后究竟藏着怎样的情感？",
+    "tags": [
+      "古风",
+      "宫廷",
+      "GB",
+      "帝王",
+      "孕夫"
+    ],
+    "status": "Incomplete"
+  },
+  {
+    "id": "clean-boy",
+    "title": "姐姐，我是干净的",
+    "author": "上安",
+    "cover": "/assets/images/covers/clean-boy.jpg",
+    "description": "酒吧里的邂逅，一场关于金钱与情感的博弈。姐姐与眼角有痣的服务生之间的微妙关系，在欲望与真心之间摇摆。",
+    "tags": [
+      "现代",
+      "都市",
+      "情感",
+      "GB",
+      "酒吧"
+    ],
+    "status": "Incomplete"
+  },
+  {
+    "id": "medicine-fate",
+    "title": "药缘",
+    "author": "深深",
+    "cover": "/assets/images/covers/medicine-fate.jpg",
+    "description": "魔教覆灭后，药修女主沈当归在地窖中捡到了一个被下了二十七种毒的药人。一段关于研究与救赎的故事就此展开。",
+    "tags": [
+      "古风",
+      "玄幻",
+      "药修",
+      "救赎",
+      "GB"
+    ],
+    "status": "Incomplete"
+  }
+]
