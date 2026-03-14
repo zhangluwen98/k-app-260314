@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kira - 个人中心</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        accent: '#ec4899',
+                        dark: '#1e293b',
+                        light: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        
+        .novel-item {
+            transition: all 0.3s ease;
+        }
+        
+        .novel-item:hover {
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <button id="back-btn" class="text-gray-600 hover:text-primary transition-colors">
+                    <i data-lucide="arrow-left"></i>
+                </button>
+                <h1 class="text-2xl font-bold text-dark">Kira</h1>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- 用户信息 -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <div class="flex items-center space-x-4">
+                <div class="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center">
+                    <i data-lucide="user" class="w-10 h-10 text-gray-500"></i>
+                </div>
+                <div>
+                    <h2 id="user-nickname" class="text-xl font-bold">未登录</h2>
+                    <p class="text-gray-600">登录后查看个人信息</p>
+                </div>
+            </div>
+            <div class="mt-6 flex space-x-4">
+                <button id="login-btn" class="px-6 py-2 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors font-medium">
+                    登录/注册
+                </button>
+                <button id="logout-btn" class="px-6 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-100 transition-colors font-medium hidden">
+                    退出登录
+                </button>
+            </div>
+        </div>
+        
+        <!-- 收藏的小说 -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h3 class="text-lg font-bold mb-4">收藏的小说</h3>
+            <div id="favorites-list" class="space-y-4">
+                <div class="text-center text-gray-500 py-8">
+                    登录后查看收藏列表
+                </div>
+            </div>
+        </div>
+        
+        <!-- 已读小说 -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-bold mb-4">已读小说</h3>
+            <div id="read-list" class="space-y-4">
+                <div class="text-center text-gray-500 py-8">
+                    登录后查看阅读记录
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 脚本 -->
+    <script>
+        // 初始化 Lucide 图标
+        lucide.createIcons();
+
+        // 检查用户登录状态
+        function checkLoginStatus() {
+            const user = localStorage.getItem('user');
+            const loginBtn = document.getElementById('login-btn');
+            const logoutBtn = document.getElementById('logout-btn');
+            const userNickname = document.getElementById('user-nickname');
+            const favoritesList = document.getElementById('favorites-list');
+            const readList = document.getElementById('read-list');
+            
+            if (user) {
+                const userData = JSON.parse(user);
+                userNickname.textContent = userData.nickname;
+                loginBtn.classList.add('hidden');
+                logoutBtn.classList.remove('hidden');
+                
+                // 显示收藏列表
+                favoritesList.innerHTML = `
+                    <div class="novel-item p-4 rounded-lg flex items-center space-x-4">
+                        <div class="w-16 h-24 rounded overflow-hidden flex-shrink-0">
+                            <img src="/assets/images/covers/clean-boy.jpg" alt="清洁男孩" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-medium">清洁男孩</h4>
+                            <p class="text-sm text-gray-500">上次阅读：2024-01-01</p>
+                        </div>
+                        <a href="/novel/clean-boy" class="text-primary hover:underline">查看</a>
+                    </div>
+                    <div class="novel-item p-4 rounded-lg flex items-center space-x-4">
+                        <div class="w-16 h-24 rounded overflow-hidden flex-shrink-0">
+                            <img src="/assets/images/covers/medicine-fate.jpg" alt="药缘" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-medium">药缘</h4>
+                            <p class="text-sm text-gray-500">上次阅读：2024-01-02</p>
+                        </div>
+                        <a href="/novel/medicine-fate" class="text-primary hover:underline">查看</a>
+                    </div>
+                `;
+                
+                // 显示已读列表
+                readList.innerHTML = `
+                    <div class="novel-item p-4 rounded-lg flex items-center space-x-4">
+                        <div class="w-16 h-24 rounded overflow-hidden flex-shrink-0">
+                            <img src="/assets/images/covers/clean-boy.jpg" alt="清洁男孩" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-medium">清洁男孩</h4>
+                            <p class="text-sm text-gray-500">上次阅读：2024-01-01</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <a href="/read/clean-boy" class="text-primary hover:underline text-sm">继续阅读</a>
+                            <button class="text-red-500 hover:underline text-sm reset-btn">重置进度</button>
+                        </div>
+                    </div>
+                    <div class="novel-item p-4 rounded-lg flex items-center space-x-4">
+                        <div class="w-16 h-24 rounded overflow-hidden flex-shrink-0">
+                            <img src="/assets/images/covers/medicine-fate.jpg" alt="药缘" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-medium">药缘</h4>
+                            <p class="text-sm text-gray-500">上次阅读：2024-01-02</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <a href="/read/medicine-fate" class="text-primary hover:underline text-sm">继续阅读</a>
+                            <button class="text-red-500 hover:underline text-sm reset-btn">重置进度</button>
+                        </div>
+                    </div>
+                `;
+                
+                // 绑定重置进度按钮事件
+                document.querySelectorAll('.reset-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        if (confirm('确定要重置进度吗？')) {
+                            // 模拟重置进度
+                            alert('进度已重置');
+                        }
+                    });
+                });
+            } else {
+                userNickname.textContent = '未登录';
+                loginBtn.classList.remove('hidden');
+                logoutBtn.classList.add('hidden');
+            }
+        }
+
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', () => {
+            checkLoginStatus();
+            
+            // 返回按钮点击事件
+            document.getElementById('back-btn').addEventListener('click', () => {
+                window.history.back();
+            });
+            
+            // 登录按钮点击事件
+            document.getElementById('login-btn').addEventListener('click', () => {
+                window.location.href = '/auth';
+            });
+            
+            // 退出登录按钮点击事件
+            document.getElementById('logout-btn').addEventListener('click', () => {
+                if (confirm('确定要退出登录吗？')) {
+                    localStorage.removeItem('user');
+                    checkLoginStatus();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
