@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kira - 阅读小说</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        accent: '#ec4899',
+                        dark: '#1e293b',
+                        light: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        
+        .message-bubble {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+        }
+        
+        .user-message {
+            background-color: #e0e7ff;
+            border-bottom-right-radius: 4px;
+            align-self: flex-end;
+        }
+        
+        .other-message {
+            background-color: #f3f4f6;
+            border-bottom-left-radius: 4px;
+            align-self: flex-start;
+        }
+        
+        .narrator-message {
+            background-color: #f0f9ff;
+            border-radius: 18px;
+            align-self: center;
+            max-width: 90%;
+        }
+        
+        .option-card {
+            transition: all 0.3s ease;
+        }
+        
+        .option-card:hover {
+            background-color: #f3f4f6;
+        }
+        
+        .option-card.selected {
+            background-color: #e0e7ff;
+            border-color: #6366f1;
+        }
+        
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background-color: #9ca3af;
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out both;
+        }
+        
+        .typing-indicator span:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+        
+        .typing-indicator span:nth-child(2) {
+            animation-delay: -0.16s;
+        }
+        
+        @keyframes typing {
+            0%, 80%, 100% {
+                transform: scale(0);
+            }
+            40% {
+                transform: scale(1);
+            }
+        }
+        
+        .chat-container {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <button id="back-btn" class="text-gray-600 hover:text-primary transition-colors">
+                    <i data-lucide="arrow-left"></i>
+                </button>
+                <h1 id="novel-title" class="text-xl font-bold text-dark truncate max-w-[200px] md:max-w-[300px]">加载中...</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="chapter-btn" class="text-gray-600 hover:text-primary transition-colors">
+                    <i data-lucide="list"></i>
+                </button>
+                <button id="profile-btn" class="text-gray-600 hover:text-primary transition-colors">
+                    <i data-lucide="user"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 聊天内容区 -->
+    <div class="flex-1 overflow-hidden">
+        <div id="chat-container" class="chat-container h-full overflow-y-auto p-4 space-y-4">
+            <!-- 消息将通过 JavaScript 动态生成 -->
+        </div>
+    </div>
+
+    <!-- 底部装饰区 -->
+    <div class="bg-white border-t border-gray-200 p-4">
+        <div class="text-center text-gray-500 text-sm">
+            选择你的下一步...
+        </div>
+    </div>
+
+    <!-- 章节选择模态框 -->
+    <div id="chapter-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-md mx-4 max-h-[80vh] overflow-y-auto">
+            <div class="p-4 border-b border-gray-200 flex justify-between items-center">
+                <h3 class="text-lg font-bold">选择章节</h3>
+                <button id="close-modal-btn" class="text-gray-500 hover:text-gray-700">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div id="chapter-list" class="p-4 space-y-2">
+                <!-- 章节列表将通过 JavaScript 动态生成 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 脚本 -->
+    <script>
+        // 初始化 Lucide 图标
+        lucide.createIcons();
+
+        // 全局变量
+        let novelData = null;
+        let currentChapter = 0;
+        let currentParagraph = 0;
+        let isTyping = false;
+        const MESSAGE_DELAY = 500; // 消息发送延迟
+
+        // 获取小说 ID
+        function getNovelId() {
+            const path = window.location.pathname;
+            const parts = path.split('/');
+            return parts[parts.length - 1];
+        }
+
+        // 加载小说数据
+        async function loadNovelData() {
+            try {
+                const novelId = getNovelId();
+                const response = await fetch(`/novels/${novelId}.json`);
+                novelData = await response.json();
+                
+                // 更新小说标题
+                document.getElementById('novel-title').textContent = novelData.title;
+                
+                // 初始化章节和段落
+                loadChapter(currentChapter);
+                
+                // 生成章节列表
+                generateChapterList();
+            } catch (error) {
+                console.error('加载小说数据失败:', error);
+            }
+        }
+
+        // 加载章节
+        function loadChapter(chapterIndex) {
+            currentChapter = chapterIndex;
+            currentParagraph = 0;
+            
+            // 清空聊天容器
+            const chatContainer = document.getElementById('chat-container');
+            chatContainer.innerHTML = '';
+            
+            // 加载第一个段落
+            loadParagraph(currentParagraph);
+        }
+
+        // 加载段落
+        async function loadParagraph(paragraphIndex) {
+            if (!novelData) return;
+            
+            const chapter = novelData.chapters[currentChapter];
+            const paragraph = chapter.paragraphs[paragraphIndex];
+            
+            if (!paragraph) return;
+            
+            currentParagraph = paragraphIndex;
+            
+            // 显示正在输入动画
+            showTypingIndicator();
+            
+            // 模拟输入延迟
+            await new Promise(resolve => setTimeout(resolve, MESSAGE_DELAY));
+            
+            // 隐藏正在输入动画
+            hideTypingIndicator();
+            
+            // 显示段落内容
+            const chatContainer = document.getElementById('chat-container');
+            
+            paragraph.parts.forEach(part => {
+                const messageElement = document.createElement('div');
+                messageElement.className = 'flex flex-col mb-4';
+                
+                if (part.type === 'narration') {
+                    // 旁白消息
+                    messageElement.className = 'flex justify-center mb-4';
+                    messageElement.innerHTML = `
+                        <div class="message-bubble narrator-message">
+                            <p>${part.content}</p>
+                        </div>
+                    `;
+                } else if (part.type === 'dialogue') {
+                    // 对话消息
+                    const isUser = part.name.includes('我');
+                    const avatar = getCharacterAvatar(part.name);
+                    
+                    messageElement.innerHTML = `
+                        <div class="flex ${isUser ? 'justify-end' : 'justify-start'}">
+                            ${!isUser ? `<div class="w-10 h-10 rounded-full overflow-hidden mr-2 flex-shrink-0">
+                                <img src="/assets/images/avatars/${avatar}" alt="${part.name}" class="w-full h-full object-cover">
+                            </div>` : ''}
+                            <div class="flex flex-col">
+                                <p class="text-xs text-gray-500 mb-1 ${isUser ? 'text-right' : ''}">${part.name}</p>
+                                <div class="message-bubble ${isUser ? 'user-message' : 'other-message'}">
+                                    <p>${part.content}</p>
+                                </div>
+                            </div>
+                            ${isUser ? `<div class="w-10 h-10 rounded-full overflow-hidden ml-2 flex-shrink-0">
+                                <img src="/assets/images/avatars/${avatar}" alt="${part.name}" class="w-full h-full object-cover">
+                            </div>` : ''}
+                        </div>
+                    `;
+                } else if (part.type === 'image') {
+                    // 图片消息
+                    messageElement.className = 'flex justify-center mb-4';
+                    messageElement.innerHTML = `
+                        <div class="max-w-full md:max-w-md">
+                            <img src="${part.url}" alt="${part.alt || ''}" class="w-full rounded-lg shadow-md">
+                        </div>
+                    `;
+                }
+                
+                chatContainer.appendChild(messageElement);
+            });
+            
+            // 显示选项
+            if (paragraph.options && paragraph.options.length > 0) {
+                const optionsElement = document.createElement('div');
+                optionsElement.className = 'mt-6 space-y-3';
+                
+                paragraph.options.forEach((option, index) => {
+                    const optionCard = document.createElement('div');
+                    optionCard.className = 'option-card p-4 border border-gray-200 rounded-lg cursor-pointer';
+                    optionCard.innerHTML = `
+                        <p class="text-gray-800">${option.text}</p>
+                    `;
+                    
+                    optionCard.addEventListener('click', () => {
+                        // 标记选项为已选
+                        document.querySelectorAll('.option-card').forEach(card => {
+                            card.classList.remove('selected');
+                        });
+                        optionCard.classList.add('selected');
+                        
+                        // 处理选项点击
+                        handleOptionClick(option);
+                    });
+                    
+                    optionsElement.appendChild(optionCard);
+                });
+                
+                chatContainer.appendChild(optionsElement);
+            }
+            
+            // 滚动到底部
+            scrollToBottom();
+        }
+
+        // 处理选项点击
+        async function handleOptionClick(option) {
+            // 模拟延迟
+            await new Promise(resolve => setTimeout(resolve, MESSAGE_DELAY));
+            
+            // 检查是否有下一个段落
+            if (option.nextParagraphs && option.nextParagraphs.length > 0) {
+                // 随机选择一个下一个段落（简单实现，实际项目中可能需要更复杂的逻辑）
+                const nextParagraphIndex = option.nextParagraphs[Math.floor(Math.random() * option.nextParagraphs.length)];
+                loadParagraph(nextParagraphIndex);
+            }
+        }
+
+        // 显示正在输入动画
+        function showTypingIndicator() {
+            if (isTyping) return;
+            
+            isTyping = true;
+            const chatContainer = document.getElementById('chat-container');
+            
+            const typingElement = document.createElement('div');
+            typingElement.id = 'typing-indicator';
+            typingElement.className = 'flex items-center mb-4';
+            typingElement.innerHTML = `
+                <div class="w-10 h-10 rounded-full overflow-hidden mr-2 flex-shrink-0">
+                    <img src="/assets/images/avatars/kira.jpg" alt="系统" class="w-full h-full object-cover">
+                </div>
+                <div class="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            `;
+            
+            chatContainer.appendChild(typingElement);
+            scrollToBottom();
+        }
+
+        // 隐藏正在输入动画
+        function hideTypingIndicator() {
+            isTyping = false;
+            const typingElement = document.getElementById('typing-indicator');
+            if (typingElement) {
+                typingElement.remove();
+            }
+        }
+
+        // 滚动到底部
+        function scrollToBottom() {
+            const chatContainer = document.getElementById('chat-container');
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        // 获取角色头像
+        function getCharacterAvatar(name) {
+            if (!novelData) return 'kira.jpg';
+            
+            const character = novelData.characters.find(c => c.name === name);
+            return character ? character.avatar : 'kira.jpg';
+        }
+
+        // 生成章节列表
+        function generateChapterList() {
+            if (!novelData) return;
+            
+            const chapterList = document.getElementById('chapter-list');
+            chapterList.innerHTML = '';
+            
+            novelData.chapters.forEach((chapter, index) => {
+                const chapterItem = document.createElement('div');
+                chapterItem.className = `p-3 rounded-lg cursor-pointer ${index === currentChapter ? 'bg-primary/10 text-primary' : 'hover:bg-gray-100'}`;
+                chapterItem.innerHTML = `
+                    <p class="font-medium">第 ${index + 1} 章：${chapter.title}</p>
+                `;
+                
+                chapterItem.addEventListener('click', () => {
+                    loadChapter(index);
+                    document.getElementById('chapter-modal').classList.remove('flex');
+                    document.getElementById('chapter-modal').classList.add('hidden');
+                });
+                
+                chapterList.appendChild(chapterItem);
+            });
+        }
+
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', () => {
+            loadNovelData();
+            
+            // 返回按钮点击事件
+            document.getElementById('back-btn').addEventListener('click', () => {
+                window.history.back();
+            });
+            
+            // 章节按钮点击事件
+            document.getElementById('chapter-btn').addEventListener('click', () => {
+                document.getElementById('chapter-modal').classList.remove('hidden');
+                document.getElementById('chapter-modal').classList.add('flex');
+                lucide.createIcons();
+            });
+            
+            // 关闭模态框按钮点击事件
+            document.getElementById('close-modal-btn').addEventListener('click', () => {
+                document.getElementById('chapter-modal').classList.remove('flex');
+                document.getElementById('chapter-modal').classList.add('hidden');
+            });
+            
+            // 个人中心按钮点击事件
+            document.getElementById('profile-btn').addEventListener('click', () => {
+                window.location.href = '/profile';
+            });
+        });
+    </script>
+</body>
+</html>
