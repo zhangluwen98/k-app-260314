@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kira - 登录/注册</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
+        <div class="text-center mb-8">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold text-2xl">K</span>
+            </div>
+            <h1 class="text-3xl font-bold text-gray-800">Kira</h1>
+            <p class="text-gray-600 mt-2">互动小说平台</p>
+        </div>
+        
+        <div x-data="auth()">
+            <!-- 错误提示 -->
+            <div x-show="error" class="bg-red-100 text-red-700 p-3 rounded-md mb-4">
+                <p x-text="error"></p>
+            </div>
+            
+            <!-- 表单 -->
+            <form @submit.prevent="handleSubmit" class="space-y-4">
+                <!-- 昵称输入 -->
+                <div>
+                    <label for="nickname" class="block text-sm font-medium text-gray-700 mb-1">昵称</label>
+                    <input 
+                        type="text" 
+                        id="nickname" 
+                        x-model="nickname" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="请输入昵称"
+                        required
+                    >
+                </div>
+                
+                <!-- 密码输入 -->
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700 mb-1">密码</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        x-model="password" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="请输入密码"
+                        required
+                    >
+                </div>
+                
+                <!-- 确认密码（仅注册时显示） -->
+                <div x-show="!isLogin">
+                    <label for="confirmPassword" class="block text-sm font-medium text-gray-700 mb-1">确认密码</label>
+                    <input 
+                        type="password" 
+                        id="confirmPassword" 
+                        x-model="confirmPassword" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="请再次输入密码"
+                        required
+                    >
+                </div>
+                
+                <!-- 提交按钮 -->
+                <button 
+                    type="submit" 
+                    class="w-full py-2 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors font-medium"
+                >
+                    <span x-text="isLogin ? '登录' : '注册'"></span>
+                </button>
+            </form>
+            
+            <!-- 切换链接 -->
+            <div class="mt-6 text-center">
+                <button 
+                    @click="isLogin = !isLogin; error = ''" 
+                    class="text-primary hover:underline text-sm"
+                >
+                    <span x-text="isLogin ? '没有账号？立即注册' : '已有账号？登录'"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Alpine.js 逻辑
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('auth', () => ({
+                isLogin: true,
+                nickname: '',
+                password: '',
+                confirmPassword: '',
+                error: '',
+                
+                async handleSubmit() {
+                    this.error = '';
+                    
+                    // 表单验证
+                    if (this.nickname.trim() === '') {
+                        this.error = '请输入昵称';
+                        return;
+                    }
+                    
+                    if (this.password.length < 6) {
+                        this.error = '密码长度至少6位';
+                        return;
+                    }
+                    
+                    if (!this.isLogin && this.password !== this.confirmPassword) {
+                        this.error = '两次输入的密码不一致';
+                        return;
+                    }
+                    
+                    try {
+                        // 模拟 API 调用
+                        // 实际项目中，这里应该调用真实的登录/注册 API
+                        console.log(`${this.isLogin ? '登录' : '注册'}请求:`, {
+                            nickname: this.nickname,
+                            password: this.password
+                        });
+                        
+                        // 模拟成功响应
+                        setTimeout(() => {
+                            // 存储用户信息到本地存储
+                            localStorage.setItem('user', JSON.stringify({
+                                id: '1',
+                                nickname: this.nickname
+                            }));
+                            
+                            // 跳转到首页
+                            window.location.href = '/';
+                        }, 1000);
+                    } catch (error) {
+                        this.error = '操作失败，请重试';
+                        console.error('登录/注册失败:', error);
+                    }
+                }
+            }));
+        });
+    </script>
+</body>
+</html>
