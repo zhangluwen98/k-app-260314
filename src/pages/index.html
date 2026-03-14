@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kira - 互动小说平台</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        accent: '#ec4899',
+                        dark: '#1e293b',
+                        light: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        
+        .novel-card {
+            transition: all 0.3s ease;
+        }
+        
+        .novel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold text-xl">K</span>
+                </div>
+                <h1 class="text-2xl font-bold text-dark">Kira</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="profile-btn" class="text-gray-600 hover:text-primary transition-colors">
+                    <i data-lucide="user"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold mb-6 text-dark">精选小说</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="novel-list">
+            <!-- 小说卡片将通过 JavaScript 动态生成 -->
+        </div>
+    </main>
+
+    <!-- 脚本 -->
+    <script>
+        // 初始化 Lucide 图标
+        lucide.createIcons();
+
+        // 加载小说列表
+        async function loadNovels() {
+            try {
+                const response = await fetch('/novels_list.json');
+                const novels = await response.json();
+                const novelList = document.getElementById('novel-list');
+                
+                novelList.innerHTML = '';
+                
+                novels.forEach(novel => {
+                    const card = document.createElement('div');
+                    card.className = 'novel-card bg-white rounded-lg overflow-hidden shadow-md';
+                    card.innerHTML = `
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="/assets/images/covers/${novel.cover}" alt="${novel.title}" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg mb-1">${novel.title}</h3>
+                            <p class="text-sm text-gray-600 mb-2">作者：${novel.author}</p>
+                            <p class="text-sm text-gray-500 line-clamp-2 mb-4">${novel.description}</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                ${novel.tags.map(tag => `<span class="px-2 py-1 bg-gray-100 text-xs rounded-full">${tag}</span>`).join('')}
+                            </div>
+                            <a href="/novel/${novel.id}" class="block w-full text-center py-2 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors">
+                                查看详情
+                            </a>
+                        </div>
+                    `;
+                    novelList.appendChild(card);
+                });
+            } catch (error) {
+                console.error('加载小说列表失败:', error);
+            }
+        }
+
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', () => {
+            loadNovels();
+            
+            // 个人中心按钮点击事件
+            document.getElementById('profile-btn').addEventListener('click', () => {
+                window.location.href = '/profile';
+            });
+        });
+    </script>
+</body>
+</html>
