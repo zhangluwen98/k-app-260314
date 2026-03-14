@@ -1,0 +1,1285 @@
+{
+  "id": "medicine-fate",
+  "title": "药缘",
+  "author": "深深",
+  "cover": "/assets/images/covers/medicine-fate.jpg",
+  "description": "魔教覆灭后，药修女主沈当归在地窖中捡到了一个被下了二十七种毒的药人。一段关于研究与救赎的故事就此展开。",
+  "tags": [
+    "古风",
+    "玄幻",
+    "药修",
+    "救赎",
+    "GB"
+  ],
+  "status": "Incomplete",
+  "likes": 0,
+  "characters": [
+    {
+      "id": "protagonist",
+      "name": "沈当归（我）",
+      "isDiscovered": true,
+      "role": "药修女主",
+      "avatar": "/assets/images/avatars/shen-dangui.jpg",
+      "persona": "冷静、专注、坦荡",
+      "background": "三百岁的药修，专攻毒理，在魔教覆灭后在地窖中捡到了药人念恩。",
+      "hearts": 0
+    },
+    {
+      "id": "nian-en",
+      "name": "念恩",
+      "isDiscovered": true,
+      "role": "药人男主",
+      "avatar": "/assets/images/avatars/nian-en.jpg",
+      "persona": "温顺、敏感、知恩图报",
+      "background": "被魔教下了二十七种毒的药人，编号十九，后被沈当归收养。",
+      "hearts": 0
+    }
+  ],
+  "chapters": [
+    {
+      "id": 1,
+      "title": "地窖",
+      "initialMessage": "魔教覆灭那天，沈当归去废墟里翻捡东西...",
+      "paragraphs": [
+        {
+          "id": "p1-1",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "魔教覆灭那天，我去废墟里翻捡东西。"
+            },
+            {
+              "type": "narration",
+              "text": "我是药修，专攻毒理。魔教炼丹房常有残存典籍、未用灵药，都是好东西。"
+            },
+            {
+              "type": "narration",
+              "text": "翻到一半，我听见地下有声音。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c1_p1_investigate",
+              "text": "循声找去",
+              "nextParagraphs": ["p1-2"]
+            },
+            {
+              "id": "c1_p1_continue",
+              "text": "继续翻找",
+              "nextParagraphs": ["p1-3"]
+            }
+          ]
+        },
+        {
+          "id": "p1-2",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "循声找去，发现一处隐蔽的地窖入口。掀开石板，一股腥腐之气扑面而来。"
+            },
+            {
+              "type": "narration",
+              "text": "地窖角落里蹲着一个人，身上缠着锁链，听见动静，本能地往后缩。"
+            },
+            {
+              "type": "image",
+              "url": "/assets/images/medicine-fate/nianen_ch1_cell.jpg",
+              "description": "地窖中被锁链束缚的念恩"
+            },
+            {
+              "type": "narration",
+              "text": "她走过去，蹲下，扣住他的手腕。"
+            },
+            {
+              "type": "narration",
+              "text": "二十七种毒。相生相克，相互制衡，层层叠加，竟在他体内形成一个精妙的平衡。"
+            },
+            {
+              "type": "narration",
+              "text": "她活了三百岁，第一次见到如此完美的'活毒经'。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c1_p2_ask",
+              "text": "询问他的名字",
+              "nextParagraphs": ["p1-4"]
+            },
+            {
+              "id": "c1_p2_leave",
+              "text": "转身离开",
+              "nextParagraphs": ["p1-5"]
+            }
+          ]
+        },
+        {
+          "id": "p1-3",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "她继续翻找，找到了几本炼丹典籍和一些珍贵药材。"
+            },
+            {
+              "type": "narration",
+              "text": "但她始终放不下那个声音，最终还是决定去看看。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c1_p3_investigate",
+              "text": "循声找去",
+              "nextParagraphs": ["p1-2"]
+            }
+          ]
+        },
+        {
+          "id": "p1-4",
+          "parts": [
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "你叫什么？"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "……十九。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "那是编号。我叫沈当归。跟我走。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "为什么？"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "你身上这二十七种毒，我想研究。每日看，慢慢看，看到你看不动为止。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c1_p4_wait",
+              "text": "等待他的回答",
+              "nextParagraphs": ["p1-6"]
+            },
+            {
+              "id": "c1_p4_press",
+              "text": "催促他",
+              "nextParagraphs": ["p1-6"]
+            }
+          ]
+        },
+        {
+          "id": "p1-5",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "她转身离开，却走了几步又停下。"
+            },
+            {
+              "type": "narration",
+              "text": "那个被锁链束缚的身影一直在她脑海里挥之不去。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c1_p5_return",
+              "text": "返回地窖",
+              "nextParagraphs": ["p1-2"]
+            }
+          ]
+        },
+        {
+          "id": "p1-6",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "他沉默了很久。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "你……研究完了会怎样？"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "不知道。总之你死之前，我都会养着你。"
+            },
+            {
+              "type": "narration",
+              "text": "他看着她。那眼睛很干净，没有恶意，没有怜悯——就是坦坦荡荡的'我想要'。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "好。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "你答应了？"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "嗯。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "有些可能会疼。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "我疼惯了。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c1_p6_next",
+              "text": "进入第二章",
+              "action": "redirect",
+              "url": "https://app.kiragb.com/?novel=medicine-fate#chapter-2",
+              "nextParagraphs": []
+            }
+          ]
+        }
+      ],
+      "extendedParagraphs": []
+    },
+    {
+      "id": 2,
+      "title": "当归",
+      "initialMessage": "她把他带回山中洞府，安置在偏室...",
+      "paragraphs": [
+        {
+          "id": "p2-1",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "我把他带回山中洞府，安置在偏室。"
+            },
+            {
+              "type": "narration",
+              "text": "第二天，我打了热水，拿了干净衣服，放在他门口。"
+            },
+            {
+              "type": "narration",
+              "text": "他洗完，站在院子里晒太阳——六年来第一次。"
+            },
+            {
+              "type": "image",
+              "url": "/assets/images/medicine-fate/nianen_ch2_sunshine.jpg",
+              "description": "念恩在院子里晒太阳"
+            },
+            {
+              "type": "narration",
+              "text": "我出来，走过去，扣住他的手腕，开始把脉。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c2_p1_check",
+              "text": "检查他的伤势",
+              "nextParagraphs": ["p2-2"]
+            },
+            {
+              "id": "c2_p1_ignore",
+              "text": "直接开始研究",
+              "nextParagraphs": ["p2-3"]
+            }
+          ]
+        },
+        {
+          "id": "p2-2",
+          "parts": [
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "疼吗？"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "不疼。早没知觉了。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "知觉没了，不是好事。以后我每日给你行针，慢慢养回来。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "你……要给我治？"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "不然怎么看？你死了我看谁？"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c2_p2_cook",
+              "text": "去做饭",
+              "nextParagraphs": ["p2-4"]
+            }
+          ]
+        },
+        {
+          "id": "p2-3",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "我开始记录他体内的毒素情况，专注地研究着。"
+            },
+            {
+              "type": "narration",
+              "text": "直到傍晚，我才想起他需要吃饭。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c2_p3_cook",
+              "text": "去做饭",
+              "nextParagraphs": ["p2-4"]
+            }
+          ]
+        },
+        {
+          "id": "p2-4",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "那天晚上，我做了饭。"
+            },
+            {
+              "type": "narration",
+              "text": "我平时辟谷，但他要吃。"
+            },
+            {
+              "type": "narration",
+              "text": "我端出一碗黑乎乎的东西，放在他面前。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "好吃。"
+            },
+            {
+              "type": "narration",
+              "text": "他没说的是——那是他这辈子第一次吃到专门为他做的饭。"
+            },
+            {
+              "type": "image",
+              "url": "/assets/images/medicine-fate/nianen_ch2_eating.jpg",
+              "description": "念恩第一次吃饭的样子"
+            },
+            {
+              "type": "narration",
+              "text": "他默念我的名字：沈当归。"
+            },
+            {
+              "type": "narration",
+              "text": "他记住了。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c2_p4_next",
+              "text": "进入第三章",
+              "action": "redirect",
+              "url": "https://app.kiragb.com/?novel=medicine-fate#chapter-3",
+              "nextParagraphs": []
+            }
+          ]
+        }
+      ],
+      "extendedParagraphs": []
+    },
+    {
+      "id": 3,
+      "title": "念恩",
+      "initialMessage": "她开始每日记录他的毒情...",
+      "paragraphs": [
+        {
+          "id": "p3-1",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "我开始每日记录他的毒情。"
+            },
+            {
+              "type": "narration",
+              "text": "有一天，我递给他一枚玉简：'注入神识，就能看见我写的。'"
+            },
+            {
+              "type": "narration",
+              "text": "他注入神识，眼前出现密密麻麻的字：十九号，约二十二岁，体内含二十七种毒……"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c3_p1_ask",
+              "text": "询问十九号的称呼",
+              "nextParagraphs": ["p3-2"]
+            }
+          ]
+        },
+        {
+          "id": "p3-2",
+          "parts": [
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "十九号？"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "不知你叫什么。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "我叫念恩。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "念恩？谁起的？"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "师父。以前的师父。"
+            },
+            {
+              "type": "narration",
+              "text": "我没问，只是把玉简拿回去，刻了一行字：念恩，约二十二岁。"
+            },
+            {
+              "type": "narration",
+              "text": "然后递给他。"
+            },
+            {
+              "type": "narration",
+              "text": "他注入神识，看见那行字。"
+            },
+            {
+              "type": "narration",
+              "text": "念恩。不是十九号。"
+            },
+            {
+              "type": "narration",
+              "text": "他把玉简握在手里，很久没说话。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c3_p2_next",
+              "text": "进入第四章",
+              "action": "redirect",
+              "url": "https://app.kiragb.com/?novel=medicine-fate#chapter-4",
+              "nextParagraphs": []
+            }
+          ]
+        }
+      ],
+      "extendedParagraphs": []
+    },
+    {
+      "id": 4,
+      "title": "姜附汤",
+      "initialMessage": "冬天来了。他怕冷——药人的身体，阳气亏损...",
+      "paragraphs": [
+        {
+          "id": "p4-1",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "冬天来了。他怕冷——药人的身体，阳气亏损。"
+            },
+            {
+              "type": "narration",
+              "text": "我发现他夜里睡不着，蜷在被子里发抖。"
+            },
+            {
+              "type": "narration",
+              "text": "第二天，我熬了一锅汤，端给他。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "喝了。"
+            },
+            {
+              "type": "narration",
+              "text": "他喝了一口，暖的，微微发辣。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c4_p1_ask",
+              "text": "询问汤的名字",
+              "nextParagraphs": ["p4-2"]
+            }
+          ]
+        },
+        {
+          "id": "p4-2",
+          "parts": [
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "这是什么？"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "姜附汤。驱寒的。"
+            },
+            {
+              "type": "narration",
+              "text": "他一口气喝完，果然暖和了些。"
+            },
+            {
+              "type": "narration",
+              "text": "第二天，他发现门口多了一个暖炉。"
+            },
+            {
+              "type": "narration",
+              "text": "他抱着暖炉，坐在院子里晒太阳。"
+            },
+            {
+              "type": "image",
+              "url": "/assets/images/medicine-fate/nianen_ch4_warming.jpg",
+              "description": "念恩抱着暖炉晒太阳"
+            },
+            {
+              "type": "narration",
+              "text": "我出来，伸手探了探他的手。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "手还凉。明天再加一味药。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c4_p2_ask",
+              "text": "询问为什么对他好",
+              "nextParagraphs": ["p4-3"]
+            }
+          ]
+        },
+        {
+          "id": "p4-3",
+          "parts": [
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "你为什么对我这么好？"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "不是对你好。是怕你冻死了没人给我研究。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "哦。"
+            },
+            {
+              "type": "narration",
+              "text": "我转身走了。"
+            },
+            {
+              "type": "narration",
+              "text": "他抱着暖炉，看着我的背影。"
+            },
+            {
+              "type": "narration",
+              "text": "以前在魔教，那些人研究他，是从不管他冷不冷的。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c4_p3_next",
+              "text": "进入第五章",
+              "action": "redirect",
+              "url": "https://app.kiragb.com/?novel=medicine-fate#chapter-5",
+              "nextParagraphs": []
+            }
+          ]
+        }
+      ],
+      "extendedParagraphs": []
+    },
+    {
+      "id": 5,
+      "title": "阿姊",
+      "initialMessage": "有一天，我在丹房炼丹，他在旁边帮忙递药材...",
+      "paragraphs": [
+        {
+          "id": "p5-1",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "有一天，我在丹房炼丹，他在旁边帮忙递药材。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "阿姊。"
+            },
+            {
+              "type": "narration",
+              "text": "我手顿了顿，回头。"
+            },
+            {
+              "type": "narration",
+              "text": "他脸有点红，手里捧着一把当归。"
+            },
+            {
+              "type": "image",
+              "url": "/assets/images/medicine-fate/nianen_ch5_blushing.jpg",
+              "description": "念恩捧着当归，脸红红的"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "为什么叫阿姊？"
+            },
+            {
+              "type": "narration",
+              "text": "他低着头，不说话。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c5_p1_ask",
+              "text": "追问原因",
+              "nextParagraphs": ["p5-2"]
+            },
+            {
+              "id": "c5_p1_ignore",
+              "text": "继续炼丹",
+              "nextParagraphs": ["p5-3"]
+            }
+          ]
+        },
+        {
+          "id": "p5-2",
+          "parts": [
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "为什么不说话？"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "我...不知道该怎么叫你。'沈前辈'太生分，'当归'又觉得不合适。'阿姊'好像刚刚好——不是特别亲近，但也不生分。"
+            },
+            {
+              "type": "narration",
+              "text": "我沉默了一会儿，继续炼丹。"
+            },
+            {
+              "type": "narration",
+              "text": "那天晚上，我在丹房里，忽然想起那个称呼。"
+            },
+            {
+              "type": "narration",
+              "text": "我也不知道为什么，但那个称呼，听起来……不讨厌。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c5_p2_next",
+              "text": "进入第六章",
+              "action": "redirect",
+              "url": "https://app.kiragb.com/?novel=medicine-fate#chapter-6",
+              "nextParagraphs": []
+            }
+          ]
+        },
+        {
+          "id": "p5-3",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "我没说不让叫。"
+            },
+            {
+              "type": "narration",
+              "text": "那就是可以叫吧？"
+            },
+            {
+              "type": "narration",
+              "text": "那天晚上，我在丹房里，忽然想起那个称呼。"
+            },
+            {
+              "type": "narration",
+              "text": "我也不知道为什么，但那个称呼，听起来……不讨厌。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c5_p3_next",
+              "text": "进入第六章",
+              "action": "redirect",
+              "url": "https://app.kiragb.com/?novel=medicine-fate#chapter-6",
+              "nextParagraphs": []
+            }
+          ]
+        }
+      ],
+      "extendedParagraphs": []
+    },
+    {
+      "id": 6,
+      "title": "学药",
+      "initialMessage": "我发现他喜欢看我种药。每次我去药田，他就跟在后面，蹲在地头看...",
+      "paragraphs": [
+        {
+          "id": "p6-1",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "我发现他喜欢看我种药。每次我去药田，他就跟在后面，蹲在地头看。"
+            },
+            {
+              "type": "narration",
+              "text": "有一天，我扔给他一把小药锄。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "想学就学。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "我……可以吗？"
+            },
+            {
+              "type": "narration",
+              "text": "我蹲下，指着一株药苗。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "这是当归。根入药，补血活血。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c6_p1_teach",
+              "text": "耐心教导",
+              "nextParagraphs": ["p6-2"]
+            },
+            {
+              "id": "c6_p1_let",
+              "text": "让他自己尝试",
+              "nextParagraphs": ["p6-3"]
+            }
+          ]
+        },
+        {
+          "id": "p6-2",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "从那天起，他每天跟我去药田。我教他认药，他记得很快——那些药，他体内大半都有。"
+            },
+            {
+              "type": "image",
+              "url": "/assets/images/medicine-fate/nianen_ch6_learning.jpg",
+              "description": "念恩在药田里认真学习"
+            },
+            {
+              "type": "narration",
+              "text": "有一天，我看着他，忽然说：'那你该学医。'"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "我？"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "你比任何人都懂这些药。学成了，能自己调理自己，或许能多活很多年。"
+            },
+            {
+              "type": "narration",
+              "text": "他愣了一下。"
+            },
+            {
+              "type": "narration",
+              "text": "多活很多年？那……我研究完了之后呢？"
+            },
+            {
+              "type": "narration",
+              "text": "他低下头，没说话。"
+            },
+            {
+              "type": "narration",
+              "text": "那天晚上，我给他拿了几本书。《药性赋》《汤头歌》《本草纲目》——都是凡间流传的基础医书。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "研究完了之后，你还会养我吗？"
+            },
+            {
+              "type": "narration",
+              "text": "我愣了。"
+            },
+            {
+              "type": "narration",
+              "text": "他低着头，没看我。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "先把书看了。"
+            },
+            {
+              "type": "narration",
+              "text": "他没再问。"
+            },
+            {
+              "type": "narration",
+              "text": "但我走之后，他抱着那些书，发了很久的呆。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c6_p2_next",
+              "text": "进入第七章",
+              "action": "redirect",
+              "url": "https://app.kiragb.com/?novel=medicine-fate#chapter-7",
+              "nextParagraphs": []
+            }
+          ]
+        },
+        {
+          "id": "p6-3",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "他握着小药锄，小心翼翼地在药田里尝试。"
+            },
+            {
+              "type": "narration",
+              "text": "虽然一开始有些笨拙，但他学得很快。"
+            },
+            {
+              "type": "image",
+              "url": "/assets/images/medicine-fate/nianen_ch6_working.jpg",
+              "description": "念恩在药田里努力劳作"
+            },
+            {
+              "type": "narration",
+              "text": "那天晚上，我给他拿了几本书。《药性赋》《汤头歌》《本草纲目》——都是凡间流传的基础医书。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "研究完了之后，你还会养我吗？"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c6_p3_answer",
+              "text": "认真回答",
+              "nextParagraphs": ["p6-4"]
+            }
+          ]
+        },
+        {
+          "id": "p6-4",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "我愣了。"
+            },
+            {
+              "type": "narration",
+              "text": "他低着头，没看我。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "先把书看了。"
+            },
+            {
+              "type": "narration",
+              "text": "他没再问。"
+            },
+            {
+              "type": "narration",
+              "text": "但我走之后，他抱着那些书，发了很久的呆。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c6_p4_next",
+              "text": "进入第七章",
+              "action": "redirect",
+              "url": "https://app.kiragb.com/?novel=medicine-fate#chapter-7",
+              "nextParagraphs": []
+            }
+          ]
+        }
+      ],
+      "extendedParagraphs": []
+    },
+    {
+      "id": 7,
+      "title": "茶",
+      "initialMessage": "我喜欢喝茶，早上起来必泡一壶...",
+      "paragraphs": [
+        {
+          "id": "p7-1",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "我喜欢喝茶，早上起来必泡一壶。"
+            },
+            {
+              "type": "narration",
+              "text": "有一天早上，我起来，发现茶已经泡好了，放在我常坐的石桌旁。温度刚好，飘着淡淡的茶香。"
+            },
+            {
+              "type": "narration",
+              "text": "我看向院子里，他正在晒药材，竹筛里铺着刚采的黄芩，阳光洒在他发梢，像是镀了一层金。"
+            },
+            {
+              "type": "image",
+              "url": "/assets/images/medicine-fate/nianen_ch7_making_tea.jpg",
+              "description": "念恩在院子里晒药材"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c7_p1_ask",
+              "text": "询问茶的事",
+              "nextParagraphs": ["p7-2"]
+            },
+            {
+              "id": "c7_p1_silent",
+              "text": "默默喝茶",
+              "nextParagraphs": ["p7-3"]
+            }
+          ]
+        },
+        {
+          "id": "p7-2",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "第二天早上，茶又泡好了，温度依然刚好。"
+            },
+            {
+              "type": "narration",
+              "text": "第三天，第四天……连续七天，每天清晨石桌上都有一杯温度适宜的茶。"
+            },
+            {
+              "type": "narration",
+              "text": "第七天，我端着茶杯走到他身边，问：'你怎么知道我喜欢这个温度？'"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "前几天看你喝茶时，第一天皱了皱眉，第二天吹了半天，第三天你喝的时候没什么表情..."
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "所以你试了七天？"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "嗯..."
+            }
+          ],
+          "choices": [
+            {
+              "id": "c7_p2_response",
+              "text": "回应他",
+              "nextParagraphs": ["p7-4"]
+            }
+          ]
+        },
+        {
+          "id": "p7-3",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "我端起茶杯，轻轻抿了一口。"
+            },
+            {
+              "type": "narration",
+              "text": "茶的温度刚刚好，入口温润，回甘悠长。"
+            },
+            {
+              "type": "narration",
+              "text": "我看向院子里的他，他似乎察觉到我的目光，抬头冲我笑了笑，阳光在他眼底跳跃。"
+            },
+            {
+              "type": "image",
+              "url": "/assets/images/medicine-fate/nianen_ch7_smiling.jpg",
+              "description": "念恩冲我微笑"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c7_p3_next",
+              "text": "进入第八章",
+              "action": "redirect",
+              "url": "https://app.kiragb.com/?novel=medicine-fate#chapter-8",
+              "nextParagraphs": []
+            }
+          ]
+        },
+        {
+          "id": "p7-4",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "我把茶喝完，站起来，走到他面前。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "以后不用试了。现在这个温度，刚好。"
+            },
+            {
+              "type": "narration",
+              "text": "他抬头看我，眼睛亮得像星子。"
+            },
+            {
+              "type": "narration",
+              "text": "我已经转身回丹房。"
+            },
+            {
+              "type": "narration",
+              "text": "他站在那，愣了一会儿，嘴角慢慢弯起来。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c7_p4_next",
+              "text": "进入第八章",
+              "action": "redirect",
+              "url": "https://app.kiragb.com/?novel=medicine-fate#chapter-8",
+              "nextParagraphs": []
+            }
+          ]
+        }
+      ],
+      "extendedParagraphs": []
+    },
+    {
+      "id": 8,
+      "title": "灯",
+      "initialMessage": "他怕黑...",
+      "paragraphs": [
+        {
+          "id": "p8-1",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "他怕黑。"
+            },
+            {
+              "type": "narration",
+              "text": "有一天晚上，我经过他门口，听见里面传来压抑的喘息声。我推开门，看见他蜷在床上，浑身发抖。"
+            },
+            {
+              "type": "image",
+              "url": "/assets/images/medicine-fate/nianen_ch8_scared.jpg",
+              "description": "念恩在黑暗中发抖"
+            },
+            {
+              "type": "narration",
+              "text": "我走过去，坐在床边。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "阿姊..."
+            }
+          ],
+          "choices": [
+            {
+              "id": "c8_p1_comfort",
+              "text": "安慰他",
+              "nextParagraphs": ["p8-2"]
+            },
+            {
+              "id": "c8_p1_stay",
+              "text": "默默陪伴",
+              "nextParagraphs": ["p8-3"]
+            }
+          ]
+        },
+        {
+          "id": "p8-2",
+          "parts": [
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "做噩梦？"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "嗯...梦到以前在魔教的日子..."
+            },
+            {
+              "type": "narration",
+              "text": "我没说话，只是轻轻拍了拍他的背。"
+            },
+            {
+              "type": "narration",
+              "text": "过了很久，他平静下来。"
+            },
+            {
+              "type": "narration",
+              "text": "我站起来，往外走。走到门口，我回头：'明天给你做盏灯。'"
+            },
+            {
+              "type": "narration",
+              "text": "第二天，他屋里多了一盏灵玉灯，不用添油，自己会亮，光温温润润的。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "这是..."
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "晚上起夜用的。"
+            },
+            {
+              "type": "narration",
+              "text": "他愣了一下。他起夜？他从不起夜。"
+            },
+            {
+              "type": "narration",
+              "text": "但我已经走了。"
+            },
+            {
+              "type": "narration",
+              "text": "那天晚上，他看着那盏灯，亮了一夜。"
+            },
+            {
+              "type": "narration",
+              "text": "有光在，好像真的没那么怕了。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c8_p2_next",
+              "text": "进入下一章",
+              "action": "redirect",
+              "url": "https://app.kiragb.com/?novel=medicine-fate#chapter-9",
+              "nextParagraphs": []
+            }
+          ]
+        },
+        {
+          "id": "p8-3",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "我没说话，就那么坐着。"
+            },
+            {
+              "type": "narration",
+              "text": "过了很久，他平静下来。"
+            },
+            {
+              "type": "narration",
+              "text": "我站起来，往外走。走到门口，我回头：'明天给你做盏灯。'"
+            },
+            {
+              "type": "narration",
+              "text": "第二天，他屋里多了一盏灵玉灯，不用添油，自己会亮，光温温润润的。"
+            },
+            {
+              "type": "image",
+              "url": "/assets/images/medicine-fate/nianen_ch8_lamp.jpg",
+              "description": "念恩看着灵玉灯"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c8_p3_ask",
+              "text": "询问他的感受",
+              "nextParagraphs": ["p8-4"]
+            }
+          ]
+        },
+        {
+          "id": "p8-4",
+          "parts": [
+            {
+              "type": "dialogue",
+              "speaker": "念恩",
+              "text": "这是..."
+            },
+            {
+              "type": "dialogue",
+              "speaker": "沈当归（我）",
+              "text": "晚上起夜用的。"
+            },
+            {
+              "type": "narration",
+              "text": "他愣了一下。他起夜？他从不起夜。"
+            },
+            {
+              "type": "narration",
+              "text": "但我已经走了。"
+            },
+            {
+              "type": "narration",
+              "text": "那天晚上，他看着那盏灯，亮了一夜。"
+            },
+            {
+              "type": "narration",
+              "text": "有光在，好像真的没那么怕了。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c8_p4_next",
+              "text": "进入下一章",
+              "action": "redirect",
+              "url": "https://app.kiragb.com/?novel=medicine-fate#chapter-9",
+              "nextParagraphs": []
+            }
+          ]
+        }
+      ],
+      "extendedParagraphs": []
+    }
+  ]
+}
