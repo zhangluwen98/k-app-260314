@@ -1,0 +1,1271 @@
+{
+  "id": "clean-boy",
+  "title": "姐姐，我是干净的",
+  "author": "上安",
+  "cover": "/assets/images/covers/clean-boy.jpg",
+  "description": "酒吧里的邂逅，一场关于金钱与情感的博弈。姐姐与眼角有痣的服务生之间的微妙关系，在欲望与真心之间摇摆。",
+  "tags": [
+    "现代",
+    "都市",
+    "情感",
+    "GB",
+    "酒吧"
+  ],
+  "status": "Incomplete",
+  "likes": 0,
+  "characters": [
+    {
+      "id": "protagonist",
+      "name": "我",
+      "isDiscovered": true,
+      "role": "姐姐",
+      "avatar": "/assets/images/avatars/protagonist.jpg",
+      "persona": "成熟、强势、温柔",
+      "background": "事业有成的女性，经常光顾酒吧，与酒吧老板是闺蜜。",
+      "hearts": 0
+    },
+    {
+      "id": "lin-mo",
+      "name": "林墨",
+      "isDiscovered": true,
+      "role": "服务生",
+      "avatar": "/assets/images/avatars/lin-mo.jpg",
+      "persona": "温柔、敏感、纯情",
+      "background": "勤工俭学的学生，在酒吧做服务生，眼角有颗痣。",
+      "hearts": 0
+    },
+    {
+      "id": "chen-yue",
+      "name": "陈悦",
+      "isDiscovered": true,
+      "role": "酒吧老板",
+      "avatar": "/assets/images/avatars/chen-yue.jpg",
+      "persona": "豪爽、仗义",
+      "background": "酒吧老板，是主角的闺蜜。",
+      "hearts": 0
+    }
+  ],
+  "chapters": [
+    {
+      "id": 1,
+      "title": "酒吧邂逅",
+      "initialMessage": "今天你又去酒吧了，新来的那个服务生，眼角有颗痣，是个勤工俭学的学生...",
+      "paragraphs": [
+        {
+          "id": "p1-1",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "今天你又去酒吧了，新来的那个服务生，眼角有颗痣，是个勤工俭学的学生，很可爱。"
+            },
+            {
+              "type": "narration",
+              "text": "酒吧老板是你闺蜜，你十分豪爽地花钱买断了那个服务生的时间。"
+            },
+            {
+              "type": "narration",
+              "text": "他墨色的短发压着眉梢，整个人温温和和的，在灯红酒绿的酒吧显得格格不入。"
+            },
+            {
+              "type": "narration",
+              "text": "尤其是那劲瘦的腰，弯下递酒时压出的西服褶皱都别有一番风味。"
+            },
+            {
+              "type": "narration",
+              "text": "他似乎怎么样都淡淡的。"
+            },
+            {
+              "type": "narration",
+              "text": "大多时候他都是默默陪着你，给你调酒，听你说一些有的没的。"
+            },
+            {
+              "type": "narration",
+              "text": "你不在酒吧的时候，他唯一要做的就是等待。"
+            },
+            {
+              "type": "narration",
+              "text": "等着你来。"
+            },
+            {
+              "type": "narration",
+              "text": "别的服务生都或真或假地讥讽，说他榜上大款了，不用干活也有钱拿。"
+            },
+            {
+              "type": "narration",
+              "text": "这样的相处模式你很满意，他也没什么异议，因此你们的关系莫名和谐。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c1_p1_continue",
+              "text": "继续回忆和他的过往",
+              "nextParagraphs": ["p1-2"]
+            },
+            {
+              "id": "c1_p1_call",
+              "text": "叫他过来",
+              "nextParagraphs": ["p1-3"]
+            }
+          ]
+        },
+        {
+          "id": "p1-2",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "有时候你忙着工作，很长时间不去酒吧，你闺蜜就会给你发他的照片，笑着说那小男生还蛮乖的，很多富婆姐姐要他服务他都拒绝了。"
+            },
+            {
+              "type": "narration",
+              "text": "你点开照片，他低着头在刷酒杯，挽着袖子，露出结实修长的小臂。"
+            },
+            {
+              "type": "image",
+              "url": "/assets/images/clean-boy/linmo_ch1_washing_glasses.jpg",
+              "description": "林墨穿着白衬衫在酒吧刷酒杯的照片"
+            },
+            {
+              "type": "narration",
+              "text": "你明明让他待在家就好。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "姐姐，你很久没来。"
+            },
+            {
+              "type": "narration",
+              "text": "微信跳出消息，是他。"
+            },
+            {
+              "type": "narration",
+              "text": "开窍了？你拿过手机看着信息笑。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "你上次把钢笔落在酒吧了"
+            },
+            {
+              "type": "narration",
+              "text": "你眯着眼睛笑，回："
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "你送过来，再带点酒。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c1_p2_wait",
+              "text": "等他送钢笔过来",
+              "nextParagraphs": ["p1-4"]
+            },
+            {
+              "id": "c1_p2_go",
+              "text": "自己去酒吧拿",
+              "nextParagraphs": ["p1-3"]
+            }
+          ]
+        },
+        {
+          "id": "p1-3",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "你走进酒吧，他正在吧台后面忙碌。看到你进来，他的眼睛亮了亮，立刻放下手里的工作向你走来。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "姐姐，你来了。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "我的钢笔呢？"
+            },
+            {
+              "type": "narration",
+              "text": "他从口袋里掏出一个精致的钢笔盒，双手递给你。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "我们现在是什么关系？"
+            },
+            {
+              "type": "narration",
+              "text": "他手一顿，你就饶有兴趣地自问自答："
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "富婆包养小白脸怎么样？"
+            },
+            {
+              "type": "narration",
+              "text": "他抿着嘴不说话了，只是把酒端给你。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c1_p3_question",
+              "text": "问他为什么拒绝其他富婆",
+              "nextParagraphs": ["p1-5"]
+            },
+            {
+              "id": "c1_p3_continue",
+              "text": "继续调侃他",
+              "nextParagraphs": ["p1-6"]
+            }
+          ]
+        },
+        {
+          "id": "p1-4",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "他过来的时候，钢笔盒被他捂的暖暖的，和什么会不翼而飞的宝贝似的。"
+            },
+            {
+              "type": "narration",
+              "text": "他低着头给你调酒，你坐在沙发上看他，笑问："
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "我们现在是什么关系？"
+            },
+            {
+              "type": "narration",
+              "text": "他手一顿，你就饶有兴趣地自问自答："
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "富婆包养小白脸怎么样？"
+            },
+            {
+              "type": "narration",
+              "text": "他抿着嘴不说话了，只是把酒端给你。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "不过，不是有其他姐姐也说要包养你吗？听说开的价比我高不少呢。你怎么不答应？"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "姐姐，你别这么说。"
+            },
+            {
+              "type": "narration",
+              "text": "他抬起眼看你，半晌还是垂眸去做自己的事情，只是低低地回应你。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c1_p4_check",
+              "text": "查看闺蜜的转账信息",
+              "nextParagraphs": ["p1-7"]
+            },
+            {
+              "id": "c1_p4_question",
+              "text": "追问他原因",
+              "nextParagraphs": ["p1-5"]
+            }
+          ]
+        },
+        {
+          "id": "p1-5",
+          "parts": [
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "姐姐，我... 我不是那种人..."
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "哪种人？收钱办事的人？"
+            },
+            {
+              "type": "narration",
+              "text": "他的脸瞬间红了，手足无措地站在那里，不知道该如何回答。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "不是... 不是这样的..."
+            }
+          ],
+          "choices": [
+            {
+              "id": "c1_p5_tease",
+              "text": "继续逗他",
+              "nextParagraphs": ["p1-6"]
+            },
+            {
+              "id": "c1_p5_comfort",
+              "text": "安慰他",
+              "nextParagraphs": ["p1-8"]
+            }
+          ]
+        },
+        {
+          "id": "p1-6",
+          "parts": [
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "也是，自己在外面包养的小白脸确实要干干净净的才放心。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "不是这样的…… 姐姐。"
+            },
+            {
+              "type": "narration",
+              "text": "他有点着急了，手不自觉抓住你的袖子，像一只被遗弃的小犬，可他哽着喉咙，不敢说出所以然来。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "那是什么样？不说清楚，我可要误会更深了。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c1_p6_push",
+              "text": "继续追问",
+              "nextParagraphs": ["p1-9"]
+            },
+            {
+              "id": "c1_p6_backoff",
+              "text": "不再追问",
+              "nextParagraphs": ["p1-8"]
+            }
+          ]
+        },
+        {
+          "id": "p1-7",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "这时闺蜜转账过来，说你给他的买断费他全给了你闺蜜，"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "陈悦",
+              "text": "不过他的月薪就从你的钱里扣了哈宝宝"
+            },
+            {
+              "type": "narration",
+              "text": "闺蜜带上了一个奸笑的表情。"
+            },
+            {
+              "type": "narration",
+              "text": "你把转账记录给他看，问他这是什么意思。"
+            },
+            {
+              "type": "narration",
+              "text": "他愣了一下，显然还没想好怎么回答。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "你答应别的富婆姐姐了？心碎。"
+            },
+            {
+              "type": "narration",
+              "text": "你做出受伤的表情，拉着他的手放在你的心口。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "没有……"
+            },
+            {
+              "type": "narration",
+              "text": "他触电般收回来手，耳尖通红地为自己辩解。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "那你为什么不收我的钱？是怕你的金主妈妈看到会生气吗？"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "姐姐…… 别这样想我…… 求你……"
+            },
+            {
+              "type": "narration",
+              "text": "他看你的眼睛湿漉漉氤氲着委屈。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c1_p7_question",
+              "text": "问他为什么不收钱",
+              "nextParagraphs": ["p1-9"]
+            },
+            {
+              "type": "c1_p7_comfort",
+              "text": "安慰他",
+              "nextParagraphs": ["p1-8"]
+            }
+          ]
+        },
+        {
+          "id": "p1-8",
+          "parts": [
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "好了，我开玩笑的。"
+            },
+            {
+              "type": "narration",
+              "text": "你伸手，轻轻拍了拍他的肩膀。他的身体一僵，然后慢慢放松下来。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "谢谢姐姐。"
+            },
+            {
+              "type": "narration",
+              "text": "他的声音很小，但很真诚。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c1_p8_next",
+              "text": "进入第二章",
+              "action": "redirect",
+              "url": "https://app.kiragb.com/?novel=clean-boy#chapter-2",
+              "nextParagraphs": []
+            }
+          ]
+        },
+        {
+          "id": "p1-9",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "你当然知道他怎么想的，从他每一次充满爱意的视线，从他每一次怀揣期待的等待，从他每一次绞尽脑汁发的消息。"
+            },
+            {
+              "type": "narration",
+              "text": "你摇着酒杯："
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "也是，自己在外面包养的小白脸确实要干干净净的才放心。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "不是这样的…… 姐姐。"
+            },
+            {
+              "type": "narration",
+              "text": "他有点着急了，手不自觉抓住你的袖子，像一只被遗弃的小犬，可他哽着喉咙，不敢说出所以然来。"
+            },
+            {
+              "type": "image",
+              "url": "/assets/images/clean-boy/linmo_ch1_grabbing_sleeve.jpg",
+              "description": "林墨着急地抓住你的袖子的样子"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "那是什么样？不说清楚，我可要误会更深了。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "我怕…… 收了钱，姐姐就真的只把我当…… 当那种关系了。"
+            },
+            {
+              "type": "narration",
+              "text": "他张了张嘴，话在喉咙里滚了几滚，最后低下头，声音轻得像要碎掉。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c1_p9_tender",
+              "text": "温柔对待他",
+              "nextParagraphs": ["p1-10"]
+            },
+            {
+              "id": "c1_p9_tease",
+              "text": "继续逗他",
+              "nextParagraphs": ["p1-11"]
+            }
+          ]
+        },
+        {
+          "id": "p1-10",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "你终于放下酒杯，玻璃与桌面磕出清脆一响。你伸手，这次他没躲，任由你抬起他的脸。灯光下，他眼底水光潋滟，睫毛颤得人心头发痒。"
+            },
+            {
+              "type": "narration",
+              "text": "你看得高兴，端起酒杯喂他喝酒，他想自己拿着酒杯，就被你摩挲着他的喉结示意别乱动。"
+            },
+            {
+              "type": "narration",
+              "text": "清酒入喉，掌心下喉结滚动。"
+            },
+            {
+              "type": "narration",
+              "text": "一杯尽了，他脸色潮红，不知道是醉的，还是羞的。"
+            },
+            {
+              "type": "image",
+              "url": "/assets/images/clean-boy/linmo_ch1_blushing_face.jpg",
+              "description": "林墨脸色潮红的样子"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "以前有过吗？"
+            },
+            {
+              "type": "narration",
+              "text": "他绷着身子，似乎一时间没反应过来，随即蓦然低头，接着连带着脖颈都红了。"
+            },
+            {
+              "type": "narration",
+              "text": "像被钉在原地的青涩猎物。攥着衣角的手指骨节发白，泄露着无措，又或许还有一丝未曾言明的悸动。睫毛颤得厉害，却始终没有躲开你笼罩下来的影子。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "…… 没。"
+            },
+            {
+              "type": "narration",
+              "text": "声音低得几乎听不见，带着少年人独有的沙哑和羞赧。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c1_p10_continue",
+              "text": "继续深入",
+              "nextParagraphs": ["p1-12"]
+            },
+            {
+              "id": "c1_p10_stop",
+              "text": "停止逗他",
+              "nextParagraphs": ["p1-13"]
+            }
+          ]
+        },
+        {
+          "id": "p1-11",
+          "parts": [
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "哦？那你想和我是什么关系？"
+            },
+            {
+              "type": "narration",
+              "text": "他的脸更红了，局促地站在那里，不知道该如何回答。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "我…… 我……"
+            },
+            {
+              "type": "narration",
+              "text": "他支支吾吾了半天，始终说不出完整的句子。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c1_p11_encourage",
+              "text": "鼓励他说出来",
+              "nextParagraphs": ["p1-12"]
+            },
+            {
+              "id": "c1_p11_stop",
+              "text": "不再逗他",
+              "nextParagraphs": ["p1-13"]
+            }
+          ]
+        },
+        {
+          "id": "p1-12",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "你低低笑了，不再逗他。手指灵巧地一抽，将领带完整解下，随意搭在自己肩上。然后，在他茫然又隐含失落的注视下，伸手替他理了理微乱的衬衫领口。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "我没有过……"
+            },
+            {
+              "type": "narration",
+              "text": "他似是怕你不信，又或是怕你…… 就此作罢。声音很急，带着一种豁出去的笨拙。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "姐姐…… 我是干净的……"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "嗯。"
+            },
+            {
+              "type": "narration",
+              "text": "你听见自己应了一声，声音比预想的要低哑一些。理好领口的手没有收回，反而顺势捧住了他半边脸颊，拇指轻轻摩挲着他发烫的皮肤。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "我知道。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c1_p12_advance",
+              "text": "推进关系",
+              "nextParagraphs": ["p1-13"]
+            },
+            {
+              "id": "c1_p12_next",
+              "text": "进入第二章",
+              "action": "redirect",
+              "url": "https://app.kiragb.com/?novel=clean-boy#chapter-2",
+              "nextParagraphs": []
+            }
+          ]
+        },
+        {
+          "id": "p1-13",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "这三个字似乎给了他莫大的勇气，也或许是清酒的后劲终于上了头。他紧绷的身体软下来一点，试探着，将脸往你温热的掌心蹭了蹭，像只终于得到安抚的小动物。"
+            },
+            {
+              "type": "image",
+              "url": "/assets/images/clean-boy/linmo_ch1_leaning_hand.jpg",
+              "description": "林墨将脸往你掌心蹭的样子"
+            },
+            {
+              "type": "narration",
+              "text": "真可爱，你想着。"
+            },
+            {
+              "type": "narration",
+              "text": "正适合养一只在家里。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c1_p13_next",
+              "text": "进入第二章",
+              "action": "redirect",
+              "url": "https://app.kiragb.com/?novel=clean-boy#chapter-2",
+              "nextParagraphs": []
+            }
+          ]
+        }
+      ],
+      "extendedParagraphs": []
+    },
+    {
+      "id": 2,
+      "title": "心有涟漪",
+      "initialMessage": "你轻轻拍了拍他的脸颊，手感温热...",
+      "paragraphs": [
+        {
+          "id": "p2-1",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "你轻轻拍了拍他的脸颊，手感温热。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "酒量这么差？"
+            },
+            {
+              "type": "narration",
+              "text": "他摇头，睫毛垂下像鸦羽。嘴唇抿得很紧，似乎还在为刚才那句 '我是干净的' 感到羞耻。"
+            },
+            {
+              "type": "narration",
+              "text": "那句话太重了，砸出来，就像把自己剥开供你审视。他现在大约后悔了，觉得自己太过急切，显得廉价。"
+            },
+            {
+              "type": "narration",
+              "text": "你松开了手。"
+            },
+            {
+              "type": "narration",
+              "text": "他没敢追过来，只留在原地，眼底那点未散的湿意显得亮晶晶的。"
+            },
+            {
+              "type": "image",
+              "url": "/assets/images/clean-boy/linmo_ch2_teary_eyes.jpg",
+              "description": "林墨眼底含泪，站在原地看着你的样子"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c2_p1_continue",
+              "text": "转身走向酒柜",
+              "nextParagraphs": ["p2-2"]
+            },
+            {
+              "id": "c2_p1_comfort",
+              "text": "轻声安慰他",
+              "nextParagraphs": ["p2-3"]
+            }
+          ]
+        },
+        {
+          "id": "p2-2",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "你转身走向酒柜，挑了一瓶他没开封过的威士忌，冰球落入杯底的声音在安静的房间里格外清晰。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "过来。"
+            },
+            {
+              "type": "narration",
+              "text": "身后传来衣料摩擦的细微声响，然后是迟疑的脚步声。他在你身侧半步远的地方停下，保持着一种恭敬的、随时等待吩咐的距离。"
+            },
+            {
+              "type": "narration",
+              "text": "你倒了小半杯酒，推到他面前。他没动。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "不喝？"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c2_p2_wait",
+              "text": "等待他的反应",
+              "nextParagraphs": ["p2-4"]
+            },
+            {
+              "id": "c2_p2_encourage",
+              "text": "鼓励他喝",
+              "nextParagraphs": ["p2-5"]
+            }
+          ]
+        },
+        {
+          "id": "p2-3",
+          "parts": [
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "不用感到羞耻，我明白你的意思。"
+            },
+            {
+              "type": "narration",
+              "text": "你柔声说道，伸手轻轻整理了一下他的衣领。"
+            },
+            {
+              "type": "narration",
+              "text": "他的身体微微一僵，然后慢慢放松下来，眼底的湿意更浓了。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c2_p3_get_wine",
+              "text": "去拿酒",
+              "nextParagraphs": ["p2-2"]
+            }
+          ]
+        },
+        {
+          "id": "p2-4",
+          "parts": [
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "不是... 只是..."
+            },
+            {
+              "type": "narration",
+              "text": "他欲言又止，手指紧紧攥着杯壁。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c2_p4_press",
+              "text": "追问原因",
+              "nextParagraphs": ["p2-6"]
+            },
+            {
+              "id": "c2_p4_encourage",
+              "text": "鼓励他喝",
+              "nextParagraphs": ["p2-5"]
+            }
+          ]
+        },
+        {
+          "id": "p2-5",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "他摇头，端起杯子，闭上眼，一饮而尽。酒液太烈，呛得他偏过头闷咳，眼角逼出更浓的水光。"
+            },
+            {
+              "type": "narration",
+              "text": "你伸手，用指节拭去他唇边一点湿痕。他浑身一僵，连咳嗽都止住了，耳尖通红。"
+            },
+            {
+              "type": "image",
+              "url": "/assets/images/clean-boy/linmo_ch2_wiping_lip.jpg",
+              "description": "你用指节拭去林墨唇边湿痕的样子"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "真听话。"
+            },
+            {
+              "type": "narration",
+              "text": "你评价道，听不出太多情绪。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c2_p5_tease",
+              "text": "靠近挑逗他",
+              "nextParagraphs": ["p2-7"]
+            },
+            {
+              "id": "c2_p5_question",
+              "text": "询问他的感受",
+              "nextParagraphs": ["p2-6"]
+            }
+          ]
+        },
+        {
+          "id": "p2-6",
+          "parts": [
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "为什么怕我觉得你不干净？"
+            },
+            {
+              "type": "narration",
+              "text": "他猛地抬头看你，嘴唇动了动，却发不出声音。半晌，才挤出一句破碎的："
+            },
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "我…… 没有对别人这样过。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c2_p6_probe",
+              "text": "进一步试探",
+              "nextParagraphs": ["p2-7"]
+            },
+            {
+              "id": "c2_p6_comfort",
+              "text": "安抚他的情绪",
+              "nextParagraphs": ["p2-8"]
+            }
+          ]
+        },
+        {
+          "id": "p2-7",
+          "parts": [
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "这样？"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "哪样？收钱？陪酒？还是……"
+            },
+            {
+              "type": "narration",
+              "text": "你停顿，目光扫过他紧抿的唇线，"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "让我碰你？"
+            },
+            {
+              "type": "narration",
+              "text": "他的脸更红了，羞耻和慌乱交织。他想后退，脚跟却钉在地上。他想辩解，但你的每个问题都像精准的针，挑开他小心翼翼维持的、名为 '平等' 的幻觉。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "我…… 不想让你觉得，我是那种给钱就……"
+            },
+            {
+              "type": "narration",
+              "text": "他语无伦次，声音越来越低，"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "…… 就什么都行的人。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c2_p7_test",
+              "text": "测试他的真心",
+              "nextParagraphs": ["p2-9"]
+            },
+            {
+              "id": "c2_p7_backoff",
+              "text": "停止试探",
+              "nextParagraphs": ["p2-8"]
+            }
+          ]
+        },
+        {
+          "id": "p2-8",
+          "parts": [
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "哦。"
+            },
+            {
+              "type": "narration",
+              "text": "你点点头，像是接受了这个说法。然后你放下酒杯，身体微微后仰，靠在酒柜边缘，好整以暇地打量他。"
+            },
+            {
+              "type": "narration",
+              "text": "他垂着眼，呼吸因为酒意和紧张而变得有些重。"
+            },
+            {
+              "type": "narration",
+              "text": "衬衫下的胸膛微微起伏，那颗你曾隔着布料感受过心跳的地方，此刻正不安定地搏动着。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c2_p8_test",
+              "text": "测试他是否为了钱",
+              "nextParagraphs": ["p2-9"]
+            },
+            {
+              "id": "c2_p8_end",
+              "text": "让他离开",
+              "nextParagraphs": ["p2-10"]
+            }
+          ]
+        },
+        {
+          "id": "p2-9",
+          "parts": [
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "那如果我不给钱呢？"
+            },
+            {
+              "type": "narration",
+              "text": "他愣住了。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "如果我不再替你付酒吧的'买断费'，也不再给你任何额外的钱。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "你还会在这里吗？还会随叫随到，还会用这种眼神看着我吗？"
+            },
+            {
+              "type": "narration",
+              "text": "空气凝固了。"
+            },
+            {
+              "type": "narration",
+              "text": "他脸上的血色一点点褪去，取而代之的是一种近乎苍白的慌乱。"
+            },
+            {
+              "type": "narration",
+              "text": "你的问题太锋利，直接剖开了所有温情脉脉的遮掩，露出底下最现实也最脆弱的连接 —— 那由金钱搭建的、摇摇欲坠的桥梁。"
+            },
+            {
+              "type": "narration",
+              "text": "他开口，声音干涩，"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "我不是为了钱……"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "那是为了什么？"
+            },
+            {
+              "type": "narration",
+              "text": "他答不上来。为了什么？那些深夜的等待，那些精心编发又删掉的信息，那些因为你一个笑容就雀跃的心跳 —— 这些能说吗？说出来，会不会显得更廉价，更像是一种情感上的乞讨？"
+            },
+            {
+              "type": "narration",
+              "text": "他怕。怕你觉得他不仅随便，而且天真，而且愚蠢，竟然在这样一段关系里奢求更多。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c2_p9_push",
+              "text": "继续追问",
+              "nextParagraphs": ["p2-10"]
+            },
+            {
+              "id": "c2_p9_soften",
+              "text": "缓和气氛",
+              "nextParagraphs": ["p2-10"]
+            }
+          ]
+        },
+        {
+          "id": "p2-10",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "看着他眼里渐渐积聚的、近乎绝望的挣扎，你终于感到一丝餍足。"
+            },
+            {
+              "type": "narration",
+              "text": "你走近一步。他下意识地想后退，却又强行止住。"
+            },
+            {
+              "type": "narration",
+              "text": "你抬手，替他整理了一下刚才被你解松、现在歪斜的衬衫领口。你的指尖不可避免地擦过他颈侧的皮肤，那里脉搏跳得飞快。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "别紧张。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "我只是问问。"
+            },
+            {
+              "type": "narration",
+              "text": "这并未让他放松，反而让他更加无措。在他未参与过的你的岁月里，你也曾像他那么年轻，也许你对他的好，只不过是对年少者的宽容。"
+            },
+            {
+              "type": "narration",
+              "text": "而他永远挣不到尽头。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "林墨",
+              "text": "姐姐……"
+            },
+            {
+              "type": "narration",
+              "text": "他唤你，声音里带了一丝不易察觉的祈求，或许是在求一个明确的答案，或许只是求你别再这样折磨他。"
+            },
+            {
+              "type": "narration",
+              "text": "你没有回答。你收回手，转身拿起沙发上的外套。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "很晚了。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "酒带回去喝吧。钢笔我收到了。"
+            },
+            {
+              "type": "narration",
+              "text": "你抬手，用指节蹭了蹭他发红的眼角，动作算不上多温柔，却让他贪恋地微微偏头，想留住那一点触碰。"
+            },
+            {
+              "type": "image",
+              "url": "/assets/images/clean-boy/linmo_ch2_touching_eye.jpg",
+              "description": "你用指节蹭林墨发红眼角的样子"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "乖一点，"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "别想太多。我喜欢你现在的样子。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "或者……"
+            },
+            {
+              "type": "narration",
+              "text": "你挑眉看他腹下，轻笑："
+            },
+            {
+              "type": "dialogue",
+              "speaker": "我",
+              "text": "休息一会再走也行。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c2_p10_leave",
+              "text": "让他离开",
+              "nextParagraphs": ["p2-11"]
+            },
+            {
+              "id": "c2_p10_stay",
+              "text": "留下他",
+              "nextParagraphs": ["p2-12"]
+            }
+          ]
+        },
+        {
+          "id": "p2-11",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "年轻人，血气方刚，挑逗不得。"
+            },
+            {
+              "type": "narration",
+              "text": "他站在原地，看着你走向卧室的背影，指尖深深陷进掌心，又无措地低头看着自己不争气的欲望。"
+            },
+            {
+              "type": "narration",
+              "text": "那杯烈酒的后劲此刻才真正翻涌上来，烧灼着他的胃和理智。他想说点什么，想抓住点什么，但最终，只是默默地离开。"
+            },
+            {
+              "type": "narration",
+              "text": "门被轻轻带上的声音传来。"
+            },
+            {
+              "type": "narration",
+              "text": "你靠在卧室门内，听着外面再无动静，嘴角勾起一个极淡的弧度。"
+            },
+            {
+              "type": "narration",
+              "text": "不急。"
+            },
+            {
+              "type": "narration",
+              "text": "你知道他明天还会来。带着更多的忐忑，更深的迷恋，和更无法挣脱的依赖。"
+            },
+            {
+              "type": "narration",
+              "text": "你甚至不需要确认。"
+            },
+            {
+              "type": "narration",
+              "text": "因为他早已把自己放上了天平，而筹码，全在你手里。你可以随时加注，也可以随时抽身。"
+            },
+            {
+              "type": "narration",
+              "text": "他战战兢兢，计算着每一分投入的情感能否换来你片刻的垂青。"
+            },
+            {
+              "type": "narration",
+              "text": "这不对等的关系里，他献上全部忐忑的真心。而你付出一点喜欢的兴致，和全部掌控的权力。"
+            },
+            {
+              "type": "narration",
+              "text": "很公平啊。"
+            },
+            {
+              "type": "narration",
+              "text": "「姐姐，我会乖的。」他的信息跳出来。"
+            },
+            {
+              "type": "narration",
+              "text": "下次对他好点吧，你想。"
+            },
+            {
+              "type": "narration",
+              "text": "毕竟再温顺的宠物也是需要奖励的。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c2_p11_end",
+              "text": "结束本章",
+              "nextParagraphs": []
+            }
+          ]
+        },
+        {
+          "id": "p2-12",
+          "parts": [
+            {
+              "type": "narration",
+              "text": "他的脸瞬间爆红，连耳尖都红得发烫。他张了张嘴，却发不出声音，只是傻傻地站在那里。"
+            },
+            {
+              "type": "narration",
+              "text": "你看着他的样子，忍不住笑了起来。走到他身边，伸手勾住他的脖子，将他拉向自己。"
+            },
+            {
+              "type": "narration",
+              "text": "他的身体僵硬得像块石头，但却没有挣扎，只是被动地跟着你走。"
+            },
+            {
+              "type": "narration",
+              "text": "卧室的门在你们身后关上，将所有的犹豫和不安都关在了外面。"
+            }
+          ],
+          "choices": [
+            {
+              "id": "c2_p12_end",
+              "text": "结束本章",
+              "nextParagraphs": []
+            }
+          ]
+        }
+      ],
+      "extendedParagraphs": []
+    }
+  ]
+}
